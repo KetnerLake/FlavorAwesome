@@ -1,4 +1,4 @@
-export default class FlavorLabel extends HTMLElement {
+export default class PrimateLabel extends HTMLElement {
   constructor() {
     super();
 
@@ -11,15 +11,19 @@ export default class FlavorLabel extends HTMLElement {
           position: relative;
         }
 
+        :host( [concealed] ) {
+          visibility: hidden;
+        }
+
         :host( [hidden] ) {
           display: none;
         }
 
         p {
           box-sizing: border-box;
-          color: var( --label-color, #201b12 );
+          color: var( --label-color, #161616 );
           cursor: var( --label-cursor, default );
-          font-family: 'IBM Plex Sans', sans-serif;
+          font-family: var( --label-font-family,  'IBM Plex Sans', sans-serif );
           font-size: var( --label-font-size, 16px );
           font-style: normal;
           font-weight: var( --label-font-weight, 400 );
@@ -27,6 +31,7 @@ export default class FlavorLabel extends HTMLElement {
           margin: 0;
           padding: 0;
           text-align: var( --label-text-align, left );
+          text-decoration: var( --label-text-decoration, none );          
           text-rendering: optimizeLegibility;
         }
 
@@ -100,6 +105,7 @@ export default class FlavorLabel extends HTMLElement {
 
   // Setup
   connectedCallback() {
+    this._upgrade( 'concealed' );        
     this._upgrade( 'hidden' );    
     this._upgrade( 'size' );  
     this._upgrade( 'text' );              
@@ -111,6 +117,7 @@ export default class FlavorLabel extends HTMLElement {
   // Watched attributes
   static get observedAttributes() {
     return [
+      'concealed',
       'hidden',
       'size',
       'text',
@@ -128,6 +135,26 @@ export default class FlavorLabel extends HTMLElement {
   // Attributes
   // Reflected
   // Boolean, Number, String, null
+  get concealed() {
+    return this.hasAttribute( 'concealed' );
+  }
+
+  set concealed( value ) {
+    if( value !== null ) {
+      if( typeof value === 'boolean' ) {
+        value = value.toString();
+      }
+
+      if( value === 'false' ) {
+        this.removeAttribute( 'concealed' );
+      } else {
+        this.setAttribute( 'concealed', '' );
+      }
+    } else {
+      this.removeAttribute( 'concealed' );
+    }
+  }
+
   get hidden() {
     return this.hasAttribute( 'hidden' );
   }
@@ -217,4 +244,4 @@ export default class FlavorLabel extends HTMLElement {
   }      
 }
 
-window.customElements.define( 'fa-label', FlavorLabel );
+window.customElements.define( 'ape-label', PrimateLabel );
