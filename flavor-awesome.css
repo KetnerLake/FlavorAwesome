@@ -1,0 +1,639 @@
+      a {
+        color: #0181F5;        
+      }
+
+      a[href='#download'] {
+        background-color: #0181F5;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        outline: none;
+        margin: 0;
+        padding: 14px 27px;        
+        text-decoration: none;
+      }
+
+      a[id=features] {
+        width: 80%;
+      }
+
+      a[id=premium] ~ h5 {
+        width: 60%;
+      }
+
+      a[id=reviews] {
+        width: 60%;
+      }
+
+      a[id=taste] {
+        width: 60%;
+      }      
+
+      article {
+        width: 80%;
+      }
+
+      article header h3,
+      article header h5 {        
+        text-align: center;
+      }
+
+      article header h5 {        
+        margin: 30px 0;
+      }
+
+      article footer h3,
+      article footer h5 {  
+        margin: 30px 0;      
+        text-align: center;
+      }      
+
+      body {
+        font-family: 'Open Sans', sans-serif;    
+        margin: 0;
+        padding: 0;
+      }
+
+      body > footer {
+        background-color: #000000;
+        padding: 30px 0;
+      }
+
+      div.center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      div.thirds h5 {
+        font-weight: 500;
+        margin: 16px 0;
+      }
+
+      div.thirds img {
+        width: 50px;
+      }
+
+      footer p {
+        color: #c7c7c7;
+        font-size: 16px;
+        text-align: center;
+      }
+
+      h3 {
+        color: #2c2c2c;
+        font-size: 46px;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+      }
+
+      h4 {
+        color: #2c2c2c;
+        font-size: 35px;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+      }      
+
+      h5 {
+        color: #2c2c2c;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 38px;
+        margin: 0;
+        padding: 0;        
+      }
+
+      h6 {
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;        
+      }
+
+      nav {
+        align-items: center;
+        background-color: #000000;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        min-height: 50px;
+        padding: 16px 10% 16px 10%;
+      }
+
+      nav a {
+        color: #ffffff;
+      }
+
+      nav div {
+        justify-self: end;
+      }
+
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        font-size: 15px;
+        gap: 16px;
+        justify-content: start;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav li {
+        color: #ffffff;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        color: #727272;
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;           
+      }
+
+      section {
+        display: flex;
+        justify-content: center;
+        padding: 60px 0 60px 0;
+      }
+
+      #download {
+        background-color: #5fb2ff;
+      }
+
+      #download h3 {
+        color: #ffffff;
+      }
+
+      #download header a {
+        width: 60%;
+      }
+
+      #download h5 {
+        color: #ffffff;
+        margin: 30px 0 0 0;        
+        padding-bottom: 60px;
+        width: 60%;
+      }
+
+      #download header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }      
+
+      div.center a {
+        background-color: #ffffff;
+        color: #5fb2ff;
+      }
+
+      #features h3 {
+        margin-bottom: 60px;
+      }
+
+      #features header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;        
+      }
+
+      #food li {
+        color: #2c2c2c;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 38px;
+      }      
+
+      #innovation {
+        padding-bottom: 0;
+      }
+
+      #innovation article {
+        border-bottom: solid 1px rgba( 0, 0, 0, 0.12 );
+        padding-bottom: 60px;
+      }
+
+      #innovation h5 {
+        flex-basis: 0;
+        flex-grow: 1;
+      }
+
+      #innovation header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #landing {
+        background-color: #5fb2ff;         
+      }
+
+      #landing h3 {
+        color: #ffffff;
+        margin-bottom: 30px;
+      }
+
+      #landing h5 {
+        color: #ffffff;
+      }
+
+      #logo {
+        align-items: center; 
+        border-radius: 5px; 
+        display: flex; 
+        height: 50px; 
+        justify-content: center; 
+        width: 50px;        
+      }
+
+      #logo img {
+        height: 85%;
+      }
+
+      #premium header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #reviews {
+        align-items: center;
+        /*
+        background-image: url( img/reviews.jpg );
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        */
+        background-color: #5fb2ff; 
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      #reviews article {
+        align-items: center;        
+        display: flex;
+        flex-direction: column;
+      }
+
+      #reviews header {
+        align-items: center;        
+        display: flex;
+        flex-direction: column;
+      } 
+
+      /*
+      #reviews::before {
+        background-color: #0181F5;
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: 0.90;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+      }
+      */
+
+      #reviews h3 {
+        color: #ffffff;
+      }
+
+      #reviews p {
+        color: #ffffff;
+        text-align: center;        
+      }
+
+      #reviews p:first-of-type {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 60px 0 30px 0;
+        text-decoration: underline;
+        width: 50%;
+      }
+
+      #reviews p:last-of-type {      
+        font-size: 22px;
+        margin: 0 0 20px 0;
+      }
+
+      #reviews p:last-of-type span {            
+        font-size: 14px;
+        text-transform: uppercase;        
+      }
+
+      #steps {
+        padding-top: 0;
+      }
+
+      #steps h5 {
+        font-weight: 500;
+        margin: 16px 0;
+      }
+
+      #steps h6 {
+        color: #0181F5;
+        font-weight: 400;
+      }
+
+      #taste header {
+        align-items: center;        
+        display: flex;
+        flex-direction: column;        
+      }
+
+      #taste header h5 {
+        width: 70%;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: repeat( 2, 1fr );
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        justify-items: center;        
+      }
+
+      .thirds {
+        display: grid;
+        grid-template-columns: repeat( 3, 1fr );
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 60px;
+        justify-items: center;        
+      }      
+
+      .thirds div {
+        width: 80%;
+      }
+
+      @media only screen and ( max-width: 1024px ) {
+        article{
+          width: 90%;
+        }
+      }
+
+      @media only screen and ( max-width: 768px ) {
+        a[id=premium] ~ h5 {
+          width: 90%;
+        }
+
+        nav {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        nav div:last-of-type {
+          justify-self: end;
+        }
+
+        nav ul {
+          display: none;
+        }
+
+        #download header a {
+          width: 90%;
+        }        
+        
+        #steps div:last-of-type {
+          justify-self: center;
+        }
+
+        #taste header a,
+        #taste header h5 {
+          width: 90%;
+        }
+
+        .thirds {
+          grid-template-columns: repeat( 2, 1fr );        
+        }
+      }      
+
+      @media only screen and ( max-width: 425px ) {
+        a[id=reviews] {
+          width: 90%;
+        }
+
+        div.thirds h5 {
+          margin: 0;
+        }
+
+        h3 {
+          font-size: 36px;
+        }
+
+        section {
+          padding: 30px 0 30px 0;
+        }
+
+        tb-carousel {
+          margin-top: 30px;
+        }
+
+        tb-wheel {
+          margin-top: 30px;
+        }
+
+        #download div.split img:last-of-type {
+          margin-top: 16px;
+        }
+
+        #download h5 {
+          width: 60%;
+        }
+
+        #download header {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+
+        #food ul {
+          width: 175px;
+        }
+
+        #food ul:first-of-type {
+          margin-bottom: 0;
+        }
+
+        #food ul:last-of-type {
+          margin-top: 0;
+        }        
+
+        #landing h3,
+        #landing h5 {
+          text-align: center;
+        }
+
+        #steps h5 {
+          margin: 0;
+        }
+
+        .split {
+          grid-template-columns: 1fr;                  
+        }
+
+        .thirds {
+          grid-template-columns: 1fr;                
+        }
+
+        #steps article.thirds {
+          grid-row-gap: 30px;
+        }
+      }
+
+      @media only screen and ( max-width: 320px ) {
+        article {
+          width: 100%;
+        }
+
+        h3 {
+          font-size: 30px;
+          font-weight: 500;
+          padding: 0 16px 0 16px;
+        }
+
+        h5 {
+          padding: 0 16px 0 16px;
+        }
+
+        nav {
+          grid-template-columns: 50px 1fr;
+        }       
+        
+        #steps h5 {
+          padding: 0;
+        }
+
+        div.thirds div h5 {
+          padding: 0;
+        }
+      }      
+
+      /*
+      header {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+        padding: 25px;
+      }
+
+
+      header ul li {
+        margin: 0 16px 0 16px;
+        list-style: none;
+      }
+
+      header button {
+        background: none;
+        border: none;
+        padding: 12px 26px 12px 26px;
+      }
+
+      header ul {
+        display: flex;
+        flex-basis: 0;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-content: center;
+      }
+
+      #food {
+        display: grid;
+        grid-template-columns: repeat( 2, 1fr );
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        justify-items: center;
+      }
+
+      #food li {
+        color: #2c2c2c;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 38px;
+      }
+
+      #steps {
+        display: grid;
+        grid-template-columns: repeat( 3, 1fr );
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        justify-items: center;        
+        padding: 24px 0 24px 0;
+      }
+
+      #steps div {
+        width: 80%;
+      }
+
+      #steps h5 {
+        font-weight: 500;
+        margin: 16px 0 16px 0;
+        padding: 0;
+      }
+
+      #steps h6 {
+        color: #0181F5;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+      }
+
+      #steps p {   
+        color: #727272;
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;           
+      }
+
+      #innovation {
+        display: grid;
+        grid-template-columns: repeat( 2, 1fr );
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        justify-items: center;        
+        padding: 24px 0 24px 0;        
+      }
+
+      #innovation button {
+        background-color: #0181F5;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        outline: none;
+        margin: 0;
+        padding: 14px 27px;
+      }
+
+      #innovation h5 {
+        color: #727272;
+        line-height: 38px;
+      }
+
+      .center {
+        text-align: center;
+      }
+      */

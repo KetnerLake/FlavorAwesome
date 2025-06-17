@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Taste Buddy" />
+
+    <title>Taste Buddy</title>
+
+    <style>
+      body {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: sans-serif;        
+        height: 100vh;
+        justify-content: center;
+        margin: 0;
+      }
+
+      div {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 512px;
+        padding: 0;
+        margin: 0;
+        width: 512px;
+      }
+
+      img {
+        height: 85%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>    
+
+  </head>
+  <body>
+
+    <div>
+      <img src="logo-icon.svg" />
+    </div>
+
+    <script src="chroma.min.js"></script>
+
+    <script>
+      const anchor = '#000000';
+      const colors = [
+        '#FFD600',
+        '#E64A19',
+        '#6f4e37',
+        '#a97142',
+        '#aed581',
+        '#d2ac62',
+        '#b11226',
+        '#e9e8bb',
+        '#fdf8cb',
+        '#0D47A1',
+        '#008000',
+        '#9f639f'
+      ];
+      const element = document.querySelector( 'div' );
+
+      colors.sort( ( a, b ) => {
+        const colorA = chroma.distance( anchor, a );
+        const colorB = chroma.distance( anchor, b );
+  
+        if( colorA > colorB ) return 1;
+        if( colorA < colorB)  return -1;
+        return 0;
+      } );
+
+      element.style.background = `conic-gradient( ${colors.toString()} )`;
+    </script>
+
+  </body>
+</html>
