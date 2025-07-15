@@ -34,8 +34,8 @@
     <section id="landing">
       <article class="split">
         <div>
-          <h3>Remember all your favorite flavors, all the time.</h3>
-          <h5>Capture specific details of your food experiences from burgers to wine.</h5>        
+          <h3>For people with a mouth.</h3>
+          <h5>Capture specific details of your food experiences from burgers to wine. Remember all your favorite flavors, all the time.</h5>        
         </div>
         <tb-carousel>
           <img src="img/landing.jpg" />
@@ -44,6 +44,20 @@
           <img src="img/detail.jpg" />
           <img src="img/photos.jpg" />
         </tb-carousel>
+      </article>
+    </section>
+
+    <section id="beta">
+      <article style="display: flex; flex-direction: column; align-items: center;">
+        <header>
+          <h3>Join the beta!</h3>
+        </header>
+        <p style="text-align: center; padding: 24px 0 24px 0;"><strong>Flavor Awesome</strong> is currently in beta. Do you want to help?<br>Submit your email below, and we will be in touch.</p>
+        <form>
+          <input id="txt_email" type="text" />
+          <button id="btn_beta" type="button">Sign up</button>
+        </form>
+        <p style="padding-top: 24px;">(Selected beta testers get free access for life.)</p>
       </article>
     </section>
 
@@ -312,6 +326,51 @@
 
     <script type="module" src="script/carousel.js"></script>
     <script type="module" src="script/wheel.js"></script>
+
+    <script type="module">
+      import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+      const supabase = createClient( 
+        'https://tcstewgnrtqajrofrrjf.supabase.co', 
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjc3Rld2ducnRxYWpyb2ZycmpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxNDM3NDgsImV4cCI6MjA2NDcxOTc0OH0.90IL2vlSUJadNpG-r6JtxPoiJvxcX4_G9f02ub64SBk' 
+      );
+
+      supabase.auth.getUser()
+      .then( ( response ) => {
+        console.log( response );
+        if( response.data.user === null ) {
+          supabase.auth.signInAnonymously()
+          .then( ( data ) => {
+            console.log( data );
+          } );
+        }
+      } );
+
+      const email = document.querySelector( '#txt_email' );
+      const button = document.querySelector( '#btn_beta' );
+      button.addEventListener( 'click', () => {
+        if( txt_email.value === null ) {
+          alert( 'Email address is required.' );
+          return;
+        }
+
+        if( txt_email.value.trim().length === 0  ) {
+          alert( 'Email address is required.' );
+          return;
+        }
+
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if( !regex.test( txt_email.value ) ) {
+          alert( 'Email address appears to be invalid.' );
+          return;
+        }    
+
+        supabase.from( 'Beta' ).insert( [{email: txt_email.value}] ).select().then( ( data ) => {
+          alert( 'Thanks for your interest!' );
+          txt_email.value = '';
+        } );
+      } );
+    </script>
 
   </body>
 </html>
