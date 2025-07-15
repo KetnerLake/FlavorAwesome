@@ -106,7 +106,8 @@
         font-size: 16px;
         line-height: 30px;
         margin: 0;
-        padding: 5px 16px 5px 16px;        
+        padding: 5px 16px 5px 16px;       
+        white-space: nowrap; 
       }
 
       form input {
@@ -117,7 +118,9 @@
         font-size: 18px;
         line-height: 30px;
         margin: 0;
+        min-width: 0;
         padding: 5px 16px 5px 16px;        
+        width: 100%;
       }
 
       h3 {
@@ -552,6 +555,17 @@
 
         #steps article.thirds {
           grid-row-gap: 30px;
+        }
+      }
+
+      @media only screen and ( max-width: 330px ) {
+        form {
+          flex-direction: column;
+        }
+
+        form input {
+          box-sizing: border-box;
+          margin: 0 16px 0 16px;
         }
       }
 
