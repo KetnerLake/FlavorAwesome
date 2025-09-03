@@ -19,6 +19,10 @@ lake-benefits {
   padding: 96px 48px 96px 48px;
 }
 
+lake-benefits::part( right ) {
+  align-items: center;
+}
+
 lake-benefits p {
   color: var( --light-text );
   font-family: 'Open Sans', sans-serif;
@@ -426,10 +430,6 @@ fa-wheel:hover {
 @media( max-width: 480px ) {
   lake-benefits {
     padding: 0;
-  }
-
-  lake-benefits::part( right ) {
-    align-items: center;
   }
 
   lake-benefits::part( title ) {
