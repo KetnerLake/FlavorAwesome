@@ -1,4 +1,4 @@
-export default class FlavorAwesomeWheel extends HTMLElement {
+export default class Wheel extends HTMLElement {
   constructor() {
     super();
 
@@ -480,4 +480,4 @@ export default class FlavorAwesomeWheel extends HTMLElement {
   }           
 }
 
-window.customElements.define( 'fa-wheel', FlavorAwesomeWheel );
+window.customElements.define( 'tb-wheel', Wheel );

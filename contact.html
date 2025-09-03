@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="For people with a mouth." />    
+    
+    <title>Contact Us</title>
+
+    <link rel="icon" type="image/svg+xml" href="./img/fa.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <lake-navigation href="./" title="Flavor Awesome">
+      <a href="./index.html#flavors">Flavors</a>
+      <a href="./index.html#features">Features</a>      
+      <a href="./index.html#visualize">Visualize</a>          
+      <lake-action href="https://app.flavorawesome.com" size="lg" slot="action">Try Now</lake-action>  
+    </lake-navigation>
+
+    <lake-page title="Contact Us">
+
+      <p slot="description">Have a question, feedback, or need support? I would love to hear from you. Send me a message and I will get back to you as soon as possible.</p>
+
+      <div class="form">
+        <lake-input id="email" label="Email Address" required></lake-input>
+        <lake-input id="company" label="Leave this field blank"></lake-input>
+        <input id="company" type="text">
+        <lake-select id="category" label="Category" required></lake-select>
+        <lake-input id="subject" label="Subject" required></lake-input>        
+        <lake-textarea id="message" label="Message" required></lake-textarea>  
+        <button type="button">Send Message</button>
+        <p><strong>Response Time:</strong>  I typically respond within 24-48 hours during business days</p>
+      </div>
+
+      <article class="centered" style="margin-top: 64px;">
+        <lake-action href="/" size="lg">Back to Flavor Awesome</lake-action>  
+      </article>
+
+    </lake-page>
+
+    <lake-footer brand="Flavor Awesome" slogan="For people with a mouth.">
+      <ul>
+        <li>Product</li>
+        <li><a href="./index.html#flavors">Flavors</a></li>        
+        <li><a href="./index.html#features">Features</a></li>
+        <li><a href="./index.html#visualize">Visualize</a></li>        
+        <li><a href="https://app.flavorawesome.com">Try Now</a></li>        
+      </ul>
+      <ul>
+        <li>Support</li>
+        <li><a href="./index.html#faq">FAQ</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./privacy.html">Privacy</a></li>        
+      </ul>      
+    </lake-footer>
+
+    <script src="https://ketnerlake.com/components.js" type="module"></script>
+
+    <script type="module">
+      import {KetnerLake} from "https://ketnerlake.com/utility.js";
+
+      const start = Date.now();
+
+      const options = [
+        'Select a category',
+        'General Support',
+        'Technical Issue',
+        'Feature Request',
+        'Privacy Question',
+        'Lifetime License',
+        'Feedback',
+        'Bug Report'
+      ];
+
+      const category = document.querySelector( '#category' );
+      category.options = options;
+      const company = document.querySelector( '#company' );
+      const email = document.querySelector( '#email' );
+      const message = document.querySelector( '#message' );      
+      const send = document.querySelector( 'button' );      
+      send.addEventListener( 'click', () => {
+        const end = Date.now();
+
+        if( ( ( end - start ) / 1000 ) < 5 ) {
+          alert( 'Review the form and try again.' );
+          return;
+        }
+
+        if( company.value !== null ) {
+          alert( 'Review the form and try again.' );
+          return;          
+        }
+
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if( email.value === null ) {
+          email.focus();
+          return;
+        }
+
+        if( !regex.test( email.value ) ) {
+          email.focus();
+          return;
+        }
+
+        if( category.value === null ) {
+          category.focus();
+          return;
+        }
+
+        if( category.value === options[0] ) {
+          category.focus();
+          return;
+        }
+
+        if( subject.value === null ) {
+          subject.focus();
+          return;
+        }
+
+        if( message.value === null ) {
+          message.focus();
+          return;
+        }        
+
+        send.disabled = true;
+
+        KetnerLake.message( 
+          email.value, 
+          subject.value, 
+          message.value, 
+          'Flavor Awesome', 
+          category.value 
+        ).then( ( id ) => {
+          console.log( id );
+
+          email.value = null;
+          category.value = null;
+          subject.value = null;
+          message.value = null;
+          send.disabled = false;
+
+          alert( 'Thanks for your message!' );
+        } );
+      } );
+      const subject = document.querySelector( '#subject' );
+    </script>
+
+  </body>
+</html>

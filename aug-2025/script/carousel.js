@@ -8,10 +8,7 @@ export default class Carousel extends HTMLElement {
         :host {
           box-sizing: border-box;
           display: flex;
-          flex-direction: row;
-          height: 320px;
-          overflow: hidden;
-          position: relative;
+          flex-direction: column;
           width: 320px;
         }
 
@@ -23,56 +20,66 @@ export default class Carousel extends HTMLElement {
           display: none;
         }
 
-        button {
-          align-self: center;
-          background: none;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 24px;
-          border: none;
-          cursor: pointer;
-          height: 96px;
-          margin: 0;
-          padding: 0;
-          outline: none;
-          width: 48px;
-        }
-
-        button:hover {
-          background-color: rgba( 255, 255, 255, 0.20 );
-        }
-
-        div {
+        .dots {
           display: flex;
-          flex-basis: 0;
-          flex-grow: 1;
           justify-content: center;
+          gap: 12px;
+          padding: 16px 0;
+          margin-top: 8px;
+        }
+
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #cbd5e1;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border: none;
+        }
+
+        .dot:hover {
+          background: #94a3b8;
+          transform: scale(1.25);
+        }
+
+        .dot.active {
+          background: #3b82f6;
+          transform: scale(1.4);
+        }
+
+        .content {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 320px;
+          position: relative;
+          overflow: hidden;
+          border-radius: 12px;
         }
 
         ::slotted( img ) {
+          position: absolute;
+          top: 0;
+          left: 0;
           height: 100%;
           object-fit: cover;
-          object-position: top;
+          object-position: center;
           width: 100%;
+          opacity: 0;
+          transition: opacity 0.6s ease-in-out;
         }
 
-        .next {
-          background-image: url( img/next.svg );          
-          border-bottom-right-radius: 48px;
-          border-top-right-radius: 48px;          
+        ::slotted( img[data-visible] ) {
+          opacity: 1;
         }
 
-        .previous {
-          background-image: url( img/previous.svg );
-          border-bottom-left-radius: 48px;
-          border-top-left-radius: 48px;
-        }        
+        
       </style>
-      <button class="previous"></button>
-      <div>
+      <div class="content">
         <slot></slot>
       </div>
-      <button class="next"></button>
+      <div class="dots"></div>
     `;
 
     // Root
@@ -80,30 +87,68 @@ export default class Carousel extends HTMLElement {
     this.shadowRoot.appendChild( template.content.cloneNode( true ) );
 
     // Elements
-    this.$next = this.shadowRoot.querySelector( 'button:last-of-type' );
-    this.$next.addEventListener( 'click', () => {
-      const index = this.selectedIndex === null ? 0 : this.selectedIndex;
-      this.selectedIndex = index === this.children.length - 1 ? 0 : index + 1;
-    } );
-
-    this.$previous = this.shadowRoot.querySelector( 'button:first-of-type' );
-    this.$previous.addEventListener( 'click', () => {
-      const index = this.selectedIndex === null ? 0 : this.selectedIndex;
-      this.selectedIndex = index === 0 ? this.children.length - 1 : index - 1;
-    } );
-
     this.$slot = this.shadowRoot.querySelector( 'slot' );
     this.$slot.addEventListener( 'slotchanged', () => {
+      this._setupDots();
       this._render();
     } );
+
+    this.$dotsContainer = this.shadowRoot.querySelector( '.dots' );
+    
+    // Auto-advance timer
+    this._autoAdvanceInterval = null;
+  }
+
+  // Setup dots based on children
+  _setupDots() {
+    this.$dotsContainer.innerHTML = '';
+    
+    for( let i = 0; i < this.children.length; i++ ) {
+      const dot = document.createElement( 'div' );
+      dot.className = 'dot';
+      dot.addEventListener( 'click', () => {
+        this._pauseAutoAdvance();
+        this.selectedIndex = i;
+        this._startAutoAdvance();
+      } );
+      this.$dotsContainer.appendChild( dot );
+    }
   }
 
   // When attributes change
   _render() {
     const index = this.selectedIndex === null ? 0 : this.selectedIndex;
 
+    // Update image visibility with smooth transition
     for( let c = 0; c < this.children.length; c++ ) {
-      this.children[c].style.display = c === index ? 'block' : 'none';
+      const img = this.children[c];
+      if( c === index ) {
+        img.setAttribute( 'data-visible', '' );
+      } else {
+        img.removeAttribute( 'data-visible' );
+      }
+    }
+
+    // Update dots
+    const dots = this.$dotsContainer.querySelectorAll( '.dot' );
+    dots.forEach( ( dot, i ) => {
+      dot.classList.toggle( 'active', i === index );
+    } );
+  }
+
+  // Auto-advance functionality
+  _startAutoAdvance() {
+    this._pauseAutoAdvance();
+    this._autoAdvanceInterval = setInterval( () => {
+      const currentIndex = this.selectedIndex === null ? 0 : this.selectedIndex;
+      this.selectedIndex = currentIndex === this.children.length - 1 ? 0 : currentIndex + 1;
+    }, 4000 ); // Change slide every 4 seconds
+  }
+
+  _pauseAutoAdvance() {
+    if( this._autoAdvanceInterval ) {
+      clearInterval( this._autoAdvanceInterval );
+      this._autoAdvanceInterval = null;
     }
   }
 
@@ -121,8 +166,24 @@ export default class Carousel extends HTMLElement {
   connectedCallback() {
     this._upgrade( 'concealed' );        
     this._upgrade( 'hidden' );    
-    this._upgrade( 'selectedIndex' );    
-    this._render();
+    this._upgrade( 'selectedIndex' );
+    
+    // Setup dots after a short delay to ensure children are ready
+    setTimeout( () => {
+      this._setupDots();
+      this._render();
+      // Start auto-advance after initial render
+      setTimeout( () => this._startAutoAdvance(), 500 );
+    }, 100 );
+    
+    // Pause auto-advance on hover
+    this.addEventListener( 'mouseenter', () => this._pauseAutoAdvance() );
+    this.addEventListener( 'mouseleave', () => this._startAutoAdvance() );
+  }
+
+  // Cleanup
+  disconnectedCallback() {
+    this._pauseAutoAdvance();
   }
 
   // Watched attributes

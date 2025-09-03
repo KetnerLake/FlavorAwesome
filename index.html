@@ -4,374 +4,167 @@
   
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Flavor Awesome" />
+    <meta name="description" content="For people with a mouth." />
 
     <title>Flavor Awesome</title>
 
-    <link rel="icon" href="/img/fa.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./img/fa.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
 
-    <!-- <link rel="icon" type="image/x-icon" href="img/favicon.png"> -->
-    <link rel="stylesheet" href="flavor-awesome.css">
+    <link rel="stylesheet" href="./styles.css" />
 
   </head>
   <body>
 
-    <nav>
-      <ul>
-        <li><a href="#taste">Taste</a></li>
-        <li><a href="#view">Visualize</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#premium">Premium</a></li>
-      </ul>
-      <div>
-        <a href="https://app.flavorawesome.com">Go to App</a>
+    <!-- Navigation -->
+    <lake-navigation href="./" title="Flavor Awesome">
+      <a href="#flavors">Flavors</a>      
+      <a href="#features">Features</a>
+      <a href="#visualize">Visualize</a>
+      <lake-action href="https://app.flavorawesome.com" size="lg" slot="action">Try Now</lake-action>  
+    </lake-navigation>
+
+    <!-- Landing -->
+    <lake-landing>
+      <h1>For People With A Mouth</h1>
+      <p>Capture flavor moments — burgers to wine — with AI that helps you remember, visualize, and elevate every bite.</p>
+      <lake-action flat href="https://app.flavorawesome.com" size="lg">Start Your Free Journey</lake-action>
+      <lake-tag icon="💡" label="Never Forget" slot="tags"></lake-tag>
+      <lake-tag icon="😛" label="Develop Your Palate" slot="tags"></lake-tag>
+      <lake-tag icon="💪" label="Impress Your Friends" slot="tags"></lake-tag>            
+    </lake-landing>
+
+    <!-- Flavors -->
+    <lake-page id="flavors" style="width: 100%;" title="Develop Your Palate">
+      <p>The details for every flavor have been carefully curated to capture the most important aspects of your experience.</p>
+      <div class="two">
+        <ul>
+          <li>Beer</li>
+          <li>Cannabis</li>
+          <li>Cheese</li>
+          <li>Cigars</li>
+          <li>Chocolate</li>
+        </ul>
+        <ul>
+          <li>Coffee</li>
+          <li>Hot Sauce</li>
+          <li>Scotch</li>
+          <li>Tea</li>
+          <li>Whiskey</li>
+        </ul>        
       </div>
-    </nav>
+      <p>Want to request a yummy flavor that you enjoy? <a href="./contact.html">Let me know!</a></p>   
+    </lake-page>         
 
-    <section id="landing">
-      <article class="split">
-        <div>
-          <h3>For people with a mouth.</h3>
-          <h5>Capture specific details of your food experiences from burgers to wine. Remember all your favorite flavors, all the time.</h5>        
-        </div>
-        <tb-carousel>
-          <img src="img/landing.jpg" />
-          <img src="img/edit.jpg" />          
-          <img src="img/flavor-wheel.jpg" />
-          <img src="img/detail.jpg" />
-          <img src="img/photos.jpg" />
-        </tb-carousel>
-      </article>
-    </section>
+    <!-- How it works -->
+    <lake-section id="steps">
+      <lake-step count="1" title="Check It Out">
+        Head on over to the app. Test it out with up to three entries. Sign up for unlimited access.
+      </lake-step>
+      <lake-step count="2" title="Develop Your Palate">
+        Record how you experience flavors. Take off the training wheels. AI recommendations help you grow as an aficionado.
+      </lake-step>
+      <lake-step count="3" title="Savor The Experience">
+        Was it the '98 or '99 you liked? No more forgotten flavors; impress friends and family with the perfect pairing.
+      </lake-step>            
+    </lake-section>    
 
-    <section id="beta">
-      <article style="display: flex; flex-direction: column; align-items: center;">
-        <header>
-          <h3>Join the beta!</h3>
-        </header>
-        <p style="text-align: center; padding: 24px 0 24px 0; width: 60%;"><strong>Flavor Awesome</strong> is currently in beta. Do you want to help? Submit your email below, and we will be in touch.</p>
-        <form>
-          <input id="txt_email" placeholder="Email address" type="text" />
-          <button id="btn_beta" type="button">Sign up</button>
-        </form>
-        <p style="padding-top: 24px; text-align: center;">(Selected beta testers get free access for life.)</p>
-      </article>
-    </section>
+    <!-- Visualize -->
+    <lake-benefits id="visualize" title="Visualize Preferences">
+      <p>Collect 16 (or more!) dimensions of information on the innovative flavor wheel. A comprehensive analytics view shows a collection of statistics, all your flavor wheel entries on one wheel, and AI-powered recommendations.</p>
+      <fa-wheel slot="right"></fa-wheel>
+    </lake-benefits>
 
-    <section id="taste">
-      <article>
-        <header>
-          <a id="taste">
-            <h3>Develop your palatte for the flavors you love.</h3>
-          </a>
-          <h5>The details for every flavor have been carefully curated to capture the most important aspects of your experience.</h5>
-        </header>
-        <div id="food" class="split">
-          <ul>
-            <li>Beer</li>
-            <li>Cannabis</li>
-            <li>Cheese</li>
-            <li>Cigars</li>
-            <li>Cheese</li>
-            <li>Chocolate</li>
-          </ul>
-          <ul>
-            <li>Coffee</li>
-            <li>Hot Sauce</li>            
-            <li>Scotch</li>
-            <li>Tea</li>
-            <li>Whiskey</li>
-            <li>Wine</li>
-          </ul>      
-        </div>
-        <footer>
-          <h5>Want to request a yummy flavor that you enjoy? <a href="mailto: parkerkrhoyt@gmail.com">Let me know!</a></h5>
-        </footer>
-      </article>
-    </section>
+    <!-- Features -->
+    <lake-section id="features" title="Take a picture, tag your location, and more...">
+      <lake-feature icon="📷" title="Attach Photos">
+        It has been said that a picture is worth a thousand words. Attach photos to each entry. View them all in the photo view.
+      </lake-feature>
+      <lake-feature icon="📍" title="Location Tagging">
+        Knowing where you had that favorite flavor can help you find it again down the road. Location tagging to the rescue!
+      </lake-feature>
+      <lake-feature icon="🌡️" title="Weather Tagging">
+        Discover how the weather changes your taste. Automatically record the current weather for your location.
+      </lake-feature>
+      <lake-feature icon="☁️" title="Cloud Backup">
+        Broke your phone? Made an upgrade? Securely backup all your content to the cloud for safe keeping.
+      </lake-feature>
+      <lake-feature icon="📱" title="Multiple Devices">
+        Access your content across smartphone, tablet, and desktop devices. Your entries follow you everywhere you need them.
+      </lake-feature>
+      <lake-feature icon="🧠" title="AI suggestions">
+        Comprehensive data analysis, paired with AI-powered suggestions help you to find flavors similar to what you like.
+      </lake-feature>            
+    </lake-section>
 
-    <section id="steps">
-      <article class="thirds">
-        <div>
-          <h6>01</h6>
-          <h5>Check it out</h5>
-          <p>Head on over <a href="https://app.flavorawesome.com">to the app</a>. Test it out with up to three entries. Sign up for unlimited access.</p>      
-        </div>
-        <div>
-          <h6>02</h6>
-          <h5>Build your palate</h5>
-          <p>Record how you experience flavors. Take off the training wheels. AI recommendations help you grow as an aficionado.</p>    
-        </div>
-        <div>
-          <h6>03</h6>
-          <h5>Savor the experience</h5>
-          <p>Was it the '98 or '99 you liked? No more forgotten flavors; impress friends and family with the perfect pairing.</p>
-        </div>      
-      </article>
-    </section>
+    <!-- Feedback -->
+    <lake-section id="feedback" title="What Our Users Say">
+      <lake-feedback method="Coffee" name="Maria K." outcome="Opened my eyes to taste">
+        "I never realized how much I was missing until I started recording flavors. Now I can actually see my palate evolving, and it makes every meal feel more intentional."
+      </lake-feedback>
+      <lake-feedback method="Wine" name="James T." outcome="Expended my horizons">
+        "The AI suggestions nailed it — I discovered pairings I never would have thought of. It feels like having a personal flavor coach in my pocket."
+      </lake-feedback>      
+      <lake-feedback method="Cannabis" name="Lena S." outcome="Never lose a favorite">
+        "I used to forget the details of my favorite strains, but now I can track flavor, place, and even the weather. It’s like keeping a map of my experiences."
+      </lake-feedback>            
+    </lake-section>
 
-    <section id="innovation">
-      <article class="split">
-        <header>
-          <a id="view">
-            <h3>Innovative visualization</h3>
-          </a>
-          <h5>Develop your palatte by rating sixteen (or more!) different aspects of the flavors you most enjoy on a scale from zero to five.</h5>
-          <a href="https://app.flavorawesome.com">Go to App</a>
-        </header>
-        <!-- <div style="background-color: #f5f5f5; height: 320px; width: 320px;"></div> -->
-        <tb-wheel></tb-wheel>
-      </article>
-    </section>
+    <!-- FAQ -->
+    <lake-section id="faq" title="Frequently Asked Questions">
+      <lake-question title="How does recording flavors help me develop my palate?">
+        By writing down what you taste, you build awareness of flavor details you might otherwise overlook. This practice sharpens your palate and helps you to revisit flavors you enjoy.
+      </lake-question>
+      <lake-question title="How is this different from a food diary app?">
+        Unlike a calorie tracker or food log, Flavor Awesome is about taste — not nutrition or dieting. It is designed to help you explore and enjoy the sensory side of eating.
+      </lake-question>
+      <lake-question title="How do AI-powered suggestions work?">
+        AI is used to analyze your flavor notes to spot patterns in your preferences. It then suggests new foods, pairings, or experiences you’re likely to enjoy based on your unique palate.
+      </lake-question>            
+      <lake-question title="Do I need to be a foodie or wine expert to use this?">
+        Not at all  — but it could make you into one! Flavor Awesome is for anyone who enjoys food and wants to be more mindful about taste, whether casual or expert.
+      </lake-question>                 
+      <lake-question title="Can I use this for specific diets (vegan, keto, etc.)?">
+        Yes. Flavor Awesome is not a dietary or weight loss plan. It is focused on flavor and personal taste development. What or how you choose to eat is up to you.
+      </lake-question>                                    
+      <lake-question title="Is my data private and secure?">
+        Absolutely. Your flavor notes are yours alone — I do not sell your data, and you stay in control of your personal flavor journey.
+      </lake-question>                        
+    </lake-section>
 
-    <section id="features">
-      <article>
-        <header>
-          <a id="features">
-            <h3>Take a picture, tag your location, and more...</h3>
-          </a>
-        </header>
-        <div class="thirds">
-          <div>
-            <img src="img/add-file.svg" />
-            <h5>Unlimited Entries</h5>
-            <p>Taste all the things, all the time, and never skip a beat. Create an unlimited number of entries.</p>                                       
-          </div>                
-          <div>
-            <img src="img/photo.svg" />
-            <h5>Attach Photos</h5>
-            <p>It has been said that a picture is worth a thousand words. Attach photos to each entry. View them all in the photo view.</p>                                       
-          </div>
-          <div>
-            <img src="img/location.svg" />          
-            <h5>Location Tagging</h5>
-            <p>Knowing where you had that favorite flavor can help you find it again down the road. Location tagging to the rescue!</p>                           
-          </div>
-          <div>
-            <img src="img/weather.svg" />
-            <h5>Weather Tagging</h5>
-            <p>Discover how the weather changes your taste. Automatically record the current weather for your location.</p>                                       
-          </div>                         
-          <div>
-            <img src="img/cloud.svg" />
-            <h5>Cloud Backup</h5>
-            <p>Broke your phone? Made an upgrade? Securely backup all your content to the cloud for safe keeping.</p>                                       
-          </div>                  
-          <!--
-          <div>
-            <img src="img/offline.svg" />          
-            <h5>Offline Support</h5>
-            <p>No connection? No problem! Offline support lets you record your favorite flvaors no matter what the network status.</p>                           
-          </div>
-          -->                 
-          <div>
-            <img src="img/responsive.svg" />
-            <h5>Multiple Devices</h5>
-            <p>Access your content across smartphone, tablet, and desktop devices. Your entries follow you everywhere you need them.</p>                                       
-          </div>                               
-          <div>
-            <img src="img/photo-album.svg" />
-            <h5>Photo View</h5>
-            <p>Take a trip down memory lane in the photo view. When you search your flavors, the photos are filtered to jog those memories.</p>                           
-          </div>                              
-          <div>
-            <img src="img/map.svg" />
-            <h5>Map View</h5>
-            <p>Find the nearby places you had those flavor experiences so you can go there again and try some more.</p>                           
-            <p></p>                           
-          </div>                    
-          <div>
-            <img src="img/recommendations.svg" />
-            <h5>Analytics View</h5>
-            <p>Mean, median, mode, charts, and AI-enabled recommendations are here to help you dial in your palate and discover new flavors.</p>                           
-          </div>                                        
-          <!--
-          <div>
-            <img src="img/collection.svg" />
-            <h5>Personal Collection</h5>
-            <p>Liqour cabinet? Tea nook? Wine cellar? The fridge? Keep track of what you have on-hand using personal collections.</p>                           
-          </div>          
-          <div>
-            <img src="img/share.svg" />
-            <h5>Social Media Sharing</h5>
-            <p>Nobody is an island, entire of itself. Share your experiences on social media including photos and flavor profile.</p>                           
-          </div>                                        
-          <div>
-            <img src="img/browser.svg" />
-            <h5>Secure and Flexible</h5>
-            <p>Work securely in any modern browser. Install on supported devices for that home screen icon and full screen display.</p>                           
-          </div>                                                  
-          -->
-        </div>
-        <!--
-        <footer>
-          <h5>Unlock even more features with a <a href="#premium">Premium</a> subscription.</h5>
-        </footer>
-        -->        
-      </article>
-    </section>
+    <!-- Call to action -->
+    <lake-cta 
+      title="Ready to Develop a Well-Tuned Palate?"
+      subtitle="It all starts with tracking the flavors you experience in the foods you love. Start today — completely free.">
+      <lake-action flat href="https://app.flavorawesome.com" size="lg">Develop Your Palate</lake-action>
+      <ul>
+        <li>No downloads</li>
+        <li>No accounts</li>
+        <li>Complete privacy</li>
+        <li>Free forever</li>
+        <li>Premium sync available</li>
+      </ul>
+    </lake-cta>
 
-    <section id="reviews">
-      <article>
-        <header>
-          <a id="reviews">
-            <h3>Check out our customer reviews...</h3>
-          </a>
-        </header>
-        <p>It's amazing!</p>
-        <p>⭐⭐⭐⭐⭐<span> - Marna, Parker, CO</span></p>
-      </article>
-    </section>
+    <!-- Footer -->
+    <lake-footer brand="Flavor Awesome" slogan="For people with a mouth.">
+      <ul>
+        <li>Product</li>
+        <li><a href="#flavors">Flavors</a></li>        
+        <li><a href="#features">Features</a></li>
+        <li><a href="#visualize">Visualize</a></li>
+        <li><a href="https://app.flavorawesome.com">Try Now</a></li>        
+      </ul>
+      <ul>
+        <li>Support</li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./privacy.html">Privacy</a></li>        
+      </ul>      
+    </lake-footer>
 
-    <section id="premium">
-      <article>
-        <header>
-          <a id="premium">
-            <h3>Go Premium</h3>
-          </a>            
-          <h5>Subscribe for USD 3.30/month (USD 33.00/year when billed annually - a 16% discount) for unlimited access to all features. Tired of monthly subscriptions? A one-time payment of $100 gets you unlimited lifetime* access.</h5>
-        </header>
-        <footer>
-          <p>* You or the application/company - whichever goes first</p>
-        </footer>
-      </article>      
-    </section>
-
-    <!--
-    <section id="premium">
-      <article>
-        <header>
-          <a id="premium">
-            <h3>Go Premium</h3>
-          </a>            
-          <h5>Subscribe for USD 2.75/month (billed annually) and unlock even more features...</h5>
-        </header>
-        <div class="thirds">
-          <div>
-            <img src="img/cloud.svg" />
-            <h5>Cloud Backup</h5>
-            <p>Broke your phone? Made an upgrade? Securely backup all your content to the cloud for safe keeping.</p>                                       
-          </div>        
-          <div>
-            <img src="img/responsive.svg" />
-            <h5>Multiple Devices</h5>
-            <p>Access your content across smartphone, tablet, and desktop devices. Your reviews follow you everywhere you need them.</p>                                       
-          </div>                  
-          <div>
-            <img src="img/search.svg" />
-            <h5>Advanced Search</h5>
-            <p>You came, you tasted, you took copious notes. That was months ago. Advanced search lets you find that special taste again.</p>                           
-          </div>          
-          <div>
-            <img src="img/location.svg" />
-            <h5>Location Lookup</h5>
-            <p>More than just GPS coordinates. Location lookup lets you search for a location. Keep a list of favorite places.</p>                                       
-          </div>                                                     
-          <div>
-            <img src="img/photo.svg" />
-            <h5>More Photos</h5>
-            <p>Attach an unlimited number of photos to each taste entry. Capture the stages of your experience.</p>                                       
-          </div>
-          <div>
-            <img src="img/collection.svg" />
-            <h5>More Collections</h5>
-            <p>More than one stash? Unlimited collections let you keep track of your inventory across multiple places.</p>                                       
-          </div>          
-          <div>
-            <img src="img/weather.svg" />
-            <h5>Weather Tagging</h5>
-            <p>Discover how the weather changes your taste. Automatically record the current weather for your location.</p>                                       
-          </div>               
-          <div>
-            <img src="img/recommendations.svg" />
-            <h5>Recommendations</h5>
-            <p>Discover new tastes! Machine learning creates a virtual palatte from your entries and makes recommendations.</p>                                       
-          </div>               
-          <div>
-            <img src="img/support.svg" />
-            <h5>Customer Support</h5>
-            <p>We always reply to our email, but our subscribers get bumped to the front of the line. VIP coming through!</p>                                       
-          </div>                                     
-        </div>
-      </article>   
-    </section>
-    -->    
-
-    <section id="download">
-      <article>
-        <header>
-          <a id="download">
-            <h3>Get started now and put those taste buds to use!</h3>
-          </a>
-          <h5>Try it out! Record three flavors for free.</h5>
-        </header>
-        <div class="center">
-          <a href="https://app.flavorawesome.com">Go to App</a>        
-        </div>
-        <!--
-        <div class="split">
-          <img src="img/app-store.svg" />
-          <img src="img/google-play.svg" />
-        </div>      
-        -->
-      </article>
-    </section>
-
-    <footer>
-      <p>Copyright &copy; 2025</p>
-    </footer>
-
-    <script type="module" src="script/carousel.js"></script>
-    <script type="module" src="script/wheel.js"></script>
-
-    <script type="module">
-      import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-
-      const supabase = createClient( 
-        'https://tcstewgnrtqajrofrrjf.supabase.co', 
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjc3Rld2ducnRxYWpyb2ZycmpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxNDM3NDgsImV4cCI6MjA2NDcxOTc0OH0.90IL2vlSUJadNpG-r6JtxPoiJvxcX4_G9f02ub64SBk' 
-      );
-
-      supabase.auth.getUser()
-      .then( ( response ) => {
-        console.log( response );
-        if( response.data.user === null ) {
-          supabase.auth.signInAnonymously()
-          .then( ( data ) => {
-            console.log( data );
-          } );
-        }
-      } );
-
-      const email = document.querySelector( '#txt_email' );
-      const button = document.querySelector( '#btn_beta' );
-      button.addEventListener( 'click', () => {
-        if( txt_email.value === null ) {
-          alert( 'Email address is required.' );
-          return;
-        }
-
-        if( txt_email.value.trim().length === 0  ) {
-          alert( 'Email address is required.' );
-          return;
-        }
-
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if( !regex.test( txt_email.value ) ) {
-          alert( 'Email address appears to be invalid.' );
-          return;
-        }    
-
-        supabase.from( 'Beta' ).insert( [{email: txt_email.value}] ).select().then( ( data ) => {
-          alert( 'Thanks for your interest!' );
-          txt_email.value = '';
-        } );
-      } );
-    </script>
+    <script src="https://ketnerlake.com/components.js" type="module"></script>
+    <script src="./script/wheel.js" type="module"></script>    
 
   </body>
 </html>

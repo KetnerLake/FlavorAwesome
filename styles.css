@@ -1,0 +1,447 @@
+:root {
+  --column-width: 1200px;
+  --light-text: #64748b;
+  --primary-text: #272727;
+  --secondary-text: #764ba2;
+  --gradient-start: #667eea;
+  --gradient: linear-gradient( 135deg, var( --gradient-start ), var( --secondary-text ) );
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+lake-benefits {
+  padding: 96px 48px 96px 48px;
+}
+
+lake-benefits p {
+  color: var( --light-text );
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+lake-cta lake-action {
+  margin-bottom: 16px;
+}
+
+lake-cta ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 16px 0 0 0;
+  padding: 0;
+}
+
+lake-cta ul li {
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  opacity: 0.80;
+  margin: 0;
+  padding: 0;
+}
+
+lake-cta ul li:after {      
+  content: '•';
+  margin: 0 8px 0 8px;
+}
+
+lake-cta ul li:before {      
+  content: '✓';
+  margin-right: 4px;
+}
+
+lake-cta ul li:last-of-type:after {            
+  content: '';
+  margin: 0;
+}
+
+lake-footer ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+lake-footer ul li {      
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+lake-footer ul li a {
+  color: var( --light-text );
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  transition: color 0.30s ease-in-out;
+}
+
+lake-footer ul li a:hover {
+  color: var( --secondary-text );
+}      
+
+lake-footer ul li:first-of-type {      
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;        
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0 0 16px 0;
+}
+
+lake-landing {
+  margin: 89px 0 0 0;
+}
+
+lake-landing h1 {
+  background: var( --gradient );
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+
+lake-landing lake-action {
+  margin: 0 0 32px 0;
+}
+
+lake-landing p {
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0 0 32px 0;
+  padding: 0;
+}      
+
+lake-navigation {
+  backdrop-filter: blur( 10px );        
+  border-bottom: 1px solid #e0e0e0;                
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 300;
+}
+
+lake-navigation a {
+  background: #00000000;
+  border-radius: 4px;
+  color: var( --primary-text );
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
+  padding: 8px 16px 8px 16px;
+  text-decoration: none;
+  transition: 
+    background 0.15s ease-in-out,
+    color 0.15s ease-in-out;
+}
+
+lake-navigation a:hover {
+  background: #00000010;        
+  color: var( --secondary-text );
+}
+
+lake-page a {
+  color: var( --gradient-start );
+  text-decoration: none;
+  transition: color 0.30s ease-in-out;
+}
+
+lake-page a:hover {
+  color: var( --secondary-text );
+}
+
+lake-page article {
+  padding: 0 0 16px 0;
+}
+
+lake-page article.centered {
+  align-items: center;
+  border-top-style: solid;
+  border-top-color: rgb( from var( --light-text ) r g b / 20% );
+  border-top-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+}
+
+lake-page article p {
+  color: var( --primary-text );
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+lake-page article p span {
+  font-weight: 700;
+}
+
+lake-page article:last-of-type {
+  margin: 0;
+}
+
+lake-page div.form {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin: 0;
+  padding: 32px;
+}
+
+lake-page div.form > button {
+  align-self: flex-start;
+  background: var( --gradient );
+  border-radius: 8px;
+  box-shadow: 
+    0 10px 15px -3px rgb( 0 0 0 / 0.10 ), 
+    0 4px 6px -4px rgb( 0 0 0 / 0.10 );        
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.50px;
+  line-height: 24px;
+  margin: 0;
+  padding: 16px 24px 16px 24px;  
+  text-decoration: none;
+  transform: translateY( 0 );
+  transition: transform 0.15s ease-in-out;       
+}
+
+lake-page div.form > button:hover {
+  transform: translateY( -4px );                  
+}        
+
+lake-page div.form > p {
+  background: rgb( from var( --gradient-start ) r g b / 0.20 );
+  border-left: solid 4px var( --gradient-start );
+  border-radius: 12px;
+  color: var( --primary-text );
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+  padding: 16px;
+}
+
+lake-page div.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+lake-page h2 {
+  border-bottom-color: var( --gradient-start );
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  color: var( --primary-text );
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;          
+  line-height: 42px;
+  margin: 0 0 16px 0;
+  padding: 0 0 8px 0;
+}
+
+lake-page p[slot=description] {
+  color: var( --light-text );
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0 0 48px 0;
+  padding: 0;
+  text-align: center;           
+}
+
+lake-page p.updated span,
+lake-page p.updated {
+  color: var( --light-text );
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 16px 0;
+  padding: 0;
+  text-align: left;           
+}
+
+lake-page ul {
+  margin: 0 0 16px 24px;
+  padding: 0;
+}
+
+lake-page ul li {
+  color: var( --primary-text );
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+lake-page ul li span {
+  font-weight: 700;
+}
+
+lake-page div.two ul {
+  justify-self: center;
+  margin-top: 32px;
+}
+
+lake-page div.two li {
+  font-size: 18px;
+}
+
+lake-page:has( div.two ) {
+  padding: 0 0 48px 0;
+}
+
+lake-page:has( div.two ) > p {
+  color: var( --light-text );
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 32px auto 16px auto;
+  padding: 0;
+  text-align: center;
+  width: 75%;
+} 
+
+lake-feature a,
+lake-question a {
+  color: var( --secondary-text );
+}
+
+fa-wheel {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba( 0, 0, 0, 0.05 );  
+  transition: 
+    box-shadow 0.30s ease-in-out,
+    transform 0.30s ease-in-out;
+}
+
+fa-wheel:hover {
+  box-shadow: rgba( 0, 0, 0, 0.1 ) 0px 10px 25px 0px;
+  transform: translateY( -8px );
+}
+
+#features {
+  --feature-background: #f8fafc;
+  --section-background: #ffffff;  
+}
+
+#feedback {
+  --feedback-background: #ffffff;
+  --section-background: #f8fafc;
+}
+
+#flavors {
+  --section-background: #f8fafc;
+  --section-margin: 0;
+}
+
+#company {
+  display: none;
+}
+
+#faq,
+#steps {
+  --question-background: #f8fafc;
+  --section-background: #ffffff;
+}
+
+@media( max-width: 768px ) {
+  lake-cta ul {
+    width: 80%;
+  }
+
+  lake-landing h1 {
+    font-size: 40px;
+    line-height: 64px;
+    text-align: center;
+  }
+
+  lake-landing p {  
+    text-align: center;
+  }
+}
+
+@media( max-width: 768px ) {
+  lake-landing h1 {
+    font-size: 32px;
+    line-height: 38px;
+    max-width: 80%;
+  }
+  
+  lake-landing p {  
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 80%;
+    text-align: center;
+  }  
+}        
+
+@media( max-width: 480px ) {
+  lake-benefits {
+    padding: 0;
+  }
+
+  lake-benefits::part( right ) {
+    align-items: center;
+  }
+
+  lake-benefits::part( title ) {
+    font-size: 32px;
+    line-height: 38px;
+  }  
+
+  lake-landing h1 {
+    max-width: 90%;
+  }
+  
+  lake-landing p {  
+    max-width: 90%;
+  }  
+}        
