@@ -2,9 +2,9 @@
   --column-width: 1200px;
   --light-text: #64748b;
   --primary-text: #272727;
-  --secondary-text: #764ba2;
-  --gradient-start: #667eea;
-  --gradient: linear-gradient( 135deg, var( --gradient-start ), var( --secondary-text ) );
+  --secondary-text: #5fb2ff;
+  --gradient-start: #5f66ff;
+  --gradient: linear-gradient( 315deg, var( --gradient-start ), var( --secondary-text ) );
 }
 
 body {
@@ -378,6 +378,7 @@ fa-wheel:hover {
 
 #feedback {
   --feedback-background: #ffffff;
+  --feedback-border: var( --gradient-start );
   --section-background: #f8fafc;
 }
 
